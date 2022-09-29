@@ -12,7 +12,7 @@ streamlit.text("🥑🍞 Avacado Toast")
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 read_csv_file = pd.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')
-streamlit.multiselect("Pick Some Fruits:", list(read_csv_file.index))
+streamlit.multiselect("Pick Some Fruits:", list(read_csv_file.Fruit))
 streamlit.dataframe(read_csv_file)
 
 
