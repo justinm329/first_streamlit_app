@@ -33,11 +33,10 @@ try:
   fruit_choice = streamlit.text_input('What fruit would you like infomration about?')
   if not fruit_choice:
     streamlit.error("Please select a fruit to get information.")
-    else:
-      back_from_function = get_fruityvice_data(fruit_choice)
-      streamlit.dataframe(back_from_function)
-#streamlit.write("The user entered", fruit_choice
-streamlit.header("The fruit load list contains:")
+  else:
+    back_from_function = get_fruityvice_data(fruit_choice)
+    streamlit.dataframe(back_from_function)
+#streamlit.header("The fruit load list contains:")
 #snowflake related functions
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
