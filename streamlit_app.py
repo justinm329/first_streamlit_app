@@ -29,13 +29,13 @@ def get_fruityvice_data(this_fruit_choice):
   return fruityvice_nomalized
 #NEW section to display fruityvice api response
 streamlit.header("Fruity Vice Fruit Advice!!")
-#try:
- # fruit_choice = streamlit.text_input('What fruit would you like infomration about?')
- # if not fruit_choice:
-  #  streamlit.error("Please select a fruit to get information.")
-  #else:
-   # back_from_function = get_fruityvice_data(fruit_choice)
-   # streamlit.dataframe(back_from_function)
+try:
+  fruit_choice = streamlit.text_input('What fruit would you like infomration about?')
+  if not fruit_choice:
+    streamlit.error("Please select a fruit to get information.")
+  else:
+    back_from_function = get_fruityvice_data(fruit_choice)
+    streamlit.dataframe(back_from_function)
 #streamlit.write("The user entered", fruit_choice)
 #streamlit.header("The fruit load list contains:")
 #snowflake related functions
