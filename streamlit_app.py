@@ -26,7 +26,9 @@ def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
+
 streamlit.header("Fruityvice Fruit advice")
+
 try:
     fruit_choice = streamlit.text_input('What fruit would you like information about')
     if not fruit_choice:
@@ -34,9 +36,11 @@ try:
     else:
         back_from_function = get_fruity_data(fruit_choice)
         streamlit.dataframe(back_from_function)
-except URLError as e:
+        
+ except:
+    pass
 
-#streamlit.header("The Fruit Load list contains:")
+streamlit.header("The Fruit Load list contains:")
 #snowflake-related functions
 def get_fruit_load_List():
     with my_cnx.cursor() as my_cur:
